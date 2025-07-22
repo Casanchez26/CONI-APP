@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayoutEncabezado"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/header_gradient"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ImageViewLateral"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="Menu lateral"
+        android:src="@drawable/menu_desplegable" />
+
+    <TextView
+        android:id="@+id/TextViewEncabezado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="¿Qué deseas gestionar hoy?"
+        android:textColor="#081145"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/logo_coni"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:contentDescription="Logo de CONI"
+        android:src="@drawable/eslogan_coni" />
+
+</LinearLayout>
