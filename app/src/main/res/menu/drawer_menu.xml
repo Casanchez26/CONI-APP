@@ -6,4 +6,21 @@
             android:icon="@android:drawable/ic_menu_close_clear_cancel"
             android:title="Cerrar Sesión" />
     </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_equipos"
+            android:icon="@drawable/ic_computer"
+            android:title="Gestión de Equipos" />
+    </group>
+
+    <item android:title="Otras Opciones">
+        <menu>
+        </menu>
+    </item>
+
 </menu>

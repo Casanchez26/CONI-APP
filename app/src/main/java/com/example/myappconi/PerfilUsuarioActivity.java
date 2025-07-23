@@ -22,17 +22,14 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
 
-        // Inicializamos las vistas del layout
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
-        // Referencia al ImageView del encabezado para el menú
         View headerInclude = findViewById(R.id.header_layout_include);
         if (headerInclude != null) {
             menuIcon = headerInclude.findViewById(R.id.ImageViewLateral);
         }
 
-        // Configuración para abrir el menú
         if (menuIcon != null) {
             menuIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -42,25 +39,31 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
             });
         }
 
-        // Lógica del menú de navegación
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                // Si la opción seleccionada es "Cerrar Sesión"
-                if (item.getItemId() == R.id.nav_logout) {
-                    // Cierra la sesión y vuelve a la pantalla de inicio
+                int id = item.getItemId(); // Obtener el ID del item seleccionado
+
+                if (id == R.id.nav_logout) {
+                    // Cierra la sesión
                     Intent intent = new Intent(PerfilUsuarioActivity.this, LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
                     drawerLayout.closeDrawer(GravityCompat.START);
                     return true;
+                } else if (id == R.id.nav_equipos) { // <-- NUEVO CÓDIGO AQUÍ
+                    Intent intent = new Intent(PerfilUsuarioActivity.this, EquiposActivity.class);
+                    startActivity(intent);
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
                 }
+                // Agrega más else if para otros ítems del menú si los tienes
+
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return false;
             }
         });
-
-        // Aca agregariamos la lógica de los módulos
     }
 
     @Override

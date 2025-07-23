@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyAppConi</string>
+    <string name="title_activity_equipos">EquiposActivity</string>
+
+<string name="select_class">-- Selecciona una clase --</string>
+<string name="select_type">-- Selecciona un tipo --</string>
+<string name="select_status">-- Selecciona un estado --</string>
+<string name="filter_by_status">Filtrar por estado</string>
 </resources>
